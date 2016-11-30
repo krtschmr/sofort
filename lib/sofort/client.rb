@@ -47,6 +47,7 @@ module Sofort
     end
 
     def pay_xml(amount, name, opts)
+
       reason = opts[:reason] || Sofort.reason
       currency_code = opts[:currency_code] || Sofort.currency_code
       country_code = opts[:country_code] ||  Sofort.country_code
