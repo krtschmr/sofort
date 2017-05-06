@@ -2,7 +2,7 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'sofort/version'
-require "active_support/all"
+
 Gem::Specification.new do |spec|
   spec.name          = "sofort"
   spec.version       = Sofort::VERSION
@@ -18,6 +18,12 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  # spec.add_dependency "httparty", "~> 0.13.7"
-  # spec.add_dependency "xml-simple", "~> 1.1.5"
+  spec.add_development_dependency "bundler", "~> 1.6"
+  spec.add_development_dependency "rake"
+  spec.add_development_dependency "rspec", "~> 3.3.0"
+  spec.add_development_dependency "webmock", "~> 1.22.2"
+  spec.add_dependency "httparty", "~> 0.13.7"
+  spec.add_dependency "xml-simple", "~> 1.1.5"
+  spec.add_dependency "activesupport", ">= 4.2", "< 6.0"
+  spec.add_dependency "builder", "~> 3.2.2"
 end
